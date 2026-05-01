@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BodyNate 京都店 | 女性専用整体・ピラティス</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ivory:      #FAF7F0;
+      --cream:      #F5EDE0;
+      --gold:       #C9954A;
+      --gold-light: #EDD9B8;
+      --gold-pale:  #FAF0E0;
+      --brown:      #8B6F4E;
+      --dark:       #2C1F14;
+      --sage:       #7A8C6E;
+      --rose:       #D4A8A0;
+      --rose-light: #F5E8E4;
+      --white:      #FFFFFF;
+      --text:       #4A3728;
+      --text-light: #7A6858;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', Georgia, serif;
+      color: var(--text);
+      background: var(--ivory);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(250, 247, 240, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gold-light);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .nav-logo-en { color: var(--gold); }
+    .nav-logo-kyoto {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--text-light);
+      font-weight: 400;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .nav-links a { color: var(--text-light); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-reserve {
+      background: var(--gold);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 50px;
+      letter-spacing: 0.08em;
+      transition: opacity 0.2s, transform 0.2s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .nav-reserve:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      margin-top: 66px;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(150deg, #FAF7F0 0%, #F5EDE0 45%, #EDD9C8 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 80px 24px 120px;
+      text-align: center;
+    }
+
+    .hero-botanical-tl {
+      position: absolute;
+      top: -30px; left: -30px;
+      width: 320px;
+      opacity: 0.22;
+      pointer-events: none;
+    }
+    .hero-botanical-br {
+      position: absolute;
+      bottom: -30px; right: -30px;
+      width: 320px;
+      opacity: 0.22;
+      transform: rotate(180deg);
+      pointer-events: none;
+    }
+    .hero-botanical-tr {
+      position: absolute;
+      top: 80px; right: 60px;
+      width: 140px;
+      opacity: 0.14;
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 680px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      padding: 7px 22px;
+      border-radius: 50px;
+      margin-bottom: 32px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .hero-badge::before, .hero-badge::after {
+      content: '✦';
+      font-size: 8px;
+      opacity: 0.6;
+    }
+
+    .hero-women-badge {
+      display: inline-block;
+      background: var(--rose-light);
+      border: 1px solid var(--rose);
+      color: var(--rose);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      padding: 5px 18px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.55;
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+    }
+    .hero h1 .en {
+      display: block;
+      font-size: clamp(11px, 1.4vw, 14px);
+      letter-spacing: 0.3em;
+      color: var(--text-light);
+      font-weight: 400;
+      margin-bottom: 14px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .hero h1 strong {
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 2.1;
+      margin-bottom: 48px;
+    }
+
+    .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 17px 52px;
+      border-radius: 50px;
+      letter-spacing: 0.1em;
+      transition: all 0.3s;
+      box-shadow: 0 5px 22px rgba(201, 149, 74, 0.38);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(201, 149, 74, 0.48); }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      font-size: 14px;
+      padding: 14px 44px;
+      border-radius: 50px;
+      letter-spacing: 0.08em;
+      transition: all 0.3s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .btn-outline:hover { background: var(--gold); color: white; }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--text-light);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 44px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 88px 24px; }
+    .section-inner { max-width: 980px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 14px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-size: clamp(22px, 3.5vw, 36px);
+      font-weight: 400;
+      color: var(--dark);
+      text-align: center;
+      line-height: 1.65;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+    .section-title strong { font-weight: 700; color: var(--gold); }
+
+    .gold-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 18px auto 52px;
+    }
+    .gold-divider::before, .gold-divider::after {
+      content: '';
+      display: block;
+      width: 56px; height: 1px;
+      background: var(--gold-light);
+    }
+    .gold-divider-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* ─── CONCEPT ─── */
+    .concept { background: var(--white); position: relative; overflow: hidden; }
+
+    .concept-botanical {
+      position: absolute;
+      right: -40px; top: 50%;
+      transform: translateY(-50%);
+      width: 200px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .concept-image {
+      border-radius: 24px;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: linear-gradient(145deg, #F5EDE0 0%, #EDD9C8 60%, #D4C4B0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      color: var(--brown);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
+    .concept-image-accent {
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 80px; height: 80px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+    .concept-image-accent2 {
+      position: absolute;
+      bottom: 30px; left: 30px;
+      width: 48px; height: 48px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      opacity: 0.25;
+    }
+
+    .concept-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      margin-bottom: 18px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .concept-title {
+      font-size: clamp(20px, 2.8vw, 30px);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.75;
+      margin-bottom: 26px;
+      letter-spacing: 0.04em;
+    }
+    .concept-title strong { font-weight: 700; color: var(--gold); }
+
+    .concept-body {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 2.1;
+      margin-bottom: 36px;
+    }
+    .concept-features {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .concept-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .concept-features li::before {
+      content: '';
+      display: block;
+      width: 20px; height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ─── SERVICES ─── */
+    .services {
+      background: var(--ivory);
+      position: relative;
+      overflow: hidden;
+    }
+    .services-botanical-l {
+      position: absolute;
+      left: -40px; bottom: 40px;
+      width: 200px;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(44, 31, 20, 0.06);
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(44, 31, 20, 0.13);
+    }
+
+    .service-thumb {
+      aspect-ratio: 3/2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      font-size: 56px;
+    }
+    .service-thumb-esthe   { background: linear-gradient(145deg, #F5E8E4 0%, #EDD9C8 100%); }
+    .service-thumb-pilates { background: linear-gradient(145deg, #E8EDE4 0%, #D5E0CD 100%); }
+    .service-thumb-seitai  { background: linear-gradient(145deg, #E8EAF0 0%, #D0D5E5 100%); }
+
+    .service-label {
+      position: absolute;
+      top: 16px; left: 16px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      background: rgba(255,255,255,0.88);
+      padding: 4px 12px;
+      border-radius: 50px;
+      border: 1px solid var(--gold-light);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    .service-body { padding: 28px 24px 30px; }
+
+    .service-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+      letter-spacing: 0.04em;
+    }
+    .service-desc {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.95;
+      margin-bottom: 22px;
+    }
+    .service-booking-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .booking-icon {
+      width: 26px; height: 26px;
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .icon-hp    { background: #EF0523; color: white; font-size: 9px; }
+    .icon-st    { background: #1D3461; color: white; font-size: 8px; }
+    .icon-line  { background: #06C755; color: white; font-size: 14px; }
+
+    .btn-reserve {
+      display: block;
+      text-align: center;
+      padding: 13px 0;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      transition: all 0.3s;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .btn-reserve-gold {
+      background: var(--gold);
+      color: white;
+      box-shadow: 0 4px 16px rgba(201, 149, 74, 0.3);
+    }
+    .btn-reserve-gold:hover { background: #b8843a; transform: translateY(-1px); }
+
+    .service-detail-link {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      color: var(--gold);
+      margin-top: 12px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.05em;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .service-detail-link:hover { opacity: 1; }
+
+    /* ─── STAFF ─── */
+    .staff { background: var(--cream); position: relative; overflow: hidden; }
+
+    .staff-botanical {
+      position: absolute;
+      right: -30px; top: 60px;
+      width: 180px;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .staff-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+      align-items: center;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 28px rgba(44, 31, 20, 0.07);
+    }
+
+    .staff-photo {
+      background: linear-gradient(145deg, #EDD9C8 0%, #D4A8A0 100%);
+      height: 100%;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: white;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      position: relative;
+    }
+    .staff-photo-circle {
+      position: absolute;
+      bottom: -30px; right: -30px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+    }
+    .staff-photo-circle2 {
+      position: absolute;
+      top: 20px; left: 20px;
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .staff-info { padding: 40px 40px 40px 0; }
+
+    .staff-role {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .staff-name-text {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+    .staff-name-en {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--text-light);
+      margin-bottom: 22px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .staff-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 24px;
+    }
+    .staff-tag {
+      background: var(--gold-pale);
+      border: 1px solid var(--gold-light);
+      color: var(--brown);
+      font-size: 11px;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .staff-bio {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 2.1;
+    }
+
+    /* ─── VOICE ─── */
+    .voice { background: white; position: relative; overflow: hidden; }
+
+    .voice-botanical {
+      position: absolute;
+      left: -20px; top: 40px;
+      width: 160px;
+      opacity: 0.09;
+      pointer-events: none;
+    }
+
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .voice-card {
+      background: var(--ivory);
+      border-radius: 18px;
+      padding: 32px 26px 28px;
+      border: 1px solid var(--gold-light);
+      position: relative;
+    }
+    .voice-quote {
+      position: absolute;
+      top: 14px; left: 18px;
+      font-size: 64px;
+      color: var(--gold-light);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .voice-stars {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+    .voice-text {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 2;
+      margin-bottom: 18px;
+      padding-top: 16px;
+    }
+    .voice-person {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    /* ─── INSTAGRAM STRIP ─── */
+    .instagram { background: var(--ivory); }
+    .instagram-placeholder {
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 48px;
+      text-align: center;
+      border: 1px dashed var(--gold-light);
+      color: var(--text-light);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .instagram-handle {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--gold);
+      font-size: 16px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── ACCESS ─── */
+    .access { background: var(--cream); }
+
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .access-map {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--ivory);
+      border: 1px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      color: var(--text-light);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .access-map iframe { width: 100%; height: 100%; border: none; }
+
+    .access-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+    }
+    .access-list {
+      list-style: none;
+      display: grid;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .access-list li {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      align-items: flex-start;
+    }
+    .access-list .al {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      font-weight: 700;
+      min-width: 52px;
+      padding-top: 3px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .access-list .av { color: var(--text); line-height: 1.75; }
+
+    .access-hours {
+      background: white;
+      border-radius: 14px;
+      padding: 22px 26px;
+      border: 1px solid var(--gold-light);
+    }
+    .access-hours-title {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .access-hours-body {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 2;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      padding: 56px 24px 40px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-sub {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 32px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      list-style: none;
+      margin-bottom: 32px;
+      font-size: 12px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .footer-links a { color: rgba(255,255,255,0.35); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.15);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+
+    /* ─── FLOATING BAR ─── */
+    .floating-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid var(--gold-light);
+      backdrop-filter: blur(8px);
+      padding: 10px 16px 14px;
+      display: none;
+      gap: 8px;
+    }
+    .floating-bar.visible { display: flex; }
+    .fb-btn {
+      flex: 1;
+      text-align: center;
+      padding: 11px 6px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      transition: opacity 0.2s;
+    }
+    .fb-btn:active { opacity: 0.8; }
+    .fb-hp   { background: #EF0523; color: white; }
+    .fb-st   { background: var(--gold); color: white; }
+    .fb-line { background: #06C755; color: white; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .concept-grid  { grid-template-columns: 1fr; }
+      .staff-card    { grid-template-columns: 1fr; }
+      .staff-photo   { min-height: 240px; }
+      .staff-info    { padding: 32px; }
+      .access-grid   { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .voice-grid    { grid-template-columns: 1fr; }
+      .nav-links, .nav-reserve { display: none; }
+      section { padding: 64px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">
+    Body<span class="nav-logo-en">Nate</span>
+    <span class="nav-logo-kyoto">KYOTO</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#concept">コンセプト</a></li>
+    <li><a href="#services">メニュー</a></li>
+    <li><a href="#staff">スタッフ</a></li>
+    <li><a href="#access">アクセス</a></li>
+  </ul>
+  <a href="#services" class="nav-reserve">ご予約はこちら</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+
+  <!-- ボタニカル装飾 (SVG) -->
+  <svg class="hero-botanical-tl" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30 310 C30 310 60 220 130 170 C200 120 250 50 220 20" stroke="#C9954A" stroke-width="1.2" fill="none"/>
+    <ellipse cx="105" cy="190" rx="48" ry="22" transform="rotate(-35 105 190)" fill="#C9954A" opacity="0.55"/>
+    <ellipse cx="165" cy="130" rx="42" ry="20" transform="rotate(-55 165 130)" fill="#C9954A" opacity="0.45"/>
+    <ellipse cx="205" cy="75"  rx="36" ry="17" transform="rotate(-72 205 75)"  fill="#C9954A" opacity="0.35"/>
+    <ellipse cx="68"  cy="250" rx="52" ry="24" transform="rotate(-18 68 250)"  fill="#C9954A" opacity="0.45"/>
+    <ellipse cx="42"  cy="295" rx="38" ry="18" transform="rotate(-8  42 295)"  fill="#C9954A" opacity="0.3"/>
+    <circle cx="105" cy="190" r="4" fill="#C9954A" opacity="0.5"/>
+    <circle cx="165" cy="130" r="3" fill="#C9954A" opacity="0.45"/>
+    <circle cx="205" cy="75"  r="3" fill="#C9954A" opacity="0.35"/>
+  </svg>
+
+  <svg class="hero-botanical-br" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30 310 C30 310 60 220 130 170 C200 120 250 50 220 20" stroke="#C9954A" stroke-width="1.2" fill="none"/>
+    <ellipse cx="105" cy="190" rx="48" ry="22" transform="rotate(-35 105 190)" fill="#C9954A" opacity="0.55"/>
+    <ellipse cx="165" cy="130" rx="42" ry="20" transform="rotate(-55 165 130)" fill="#C9954A" opacity="0.45"/>
+    <ellipse cx="205" cy="75"  rx="36" ry="17" transform="rotate(-72 205 75)"  fill="#C9954A" opacity="0.35"/>
+    <ellipse cx="68"  cy="250" rx="52" ry="24" transform="rotate(-18 68 250)"  fill="#C9954A" opacity="0.45"/>
+    <ellipse cx="42"  cy="295" rx="38" ry="18" transform="rotate(-8  42 295)"  fill="#C9954A" opacity="0.3"/>
+    <circle cx="105" cy="190" r="4" fill="#C9954A" opacity="0.5"/>
+    <circle cx="165" cy="130" r="3" fill="#C9954A" opacity="0.45"/>
+    <circle cx="205" cy="75"  r="3" fill="#C9954A" opacity="0.35"/>
+  </svg>
+
+  <svg class="hero-botanical-tr" viewBox="0 0 160 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M80 220 C80 220 80 140 100 90 C120 40 90 10 80 4" stroke="#C9954A" stroke-width="1" fill="none"/>
+    <ellipse cx="95" cy="100" rx="28" ry="13" transform="rotate(20 95 100)" fill="#C9954A" opacity="0.5"/>
+    <ellipse cx="88" cy="150" rx="24" ry="11" transform="rotate(-15 88 150)" fill="#C9954A" opacity="0.4"/>
+    <ellipse cx="102" cy="55" rx="22" ry="10" transform="rotate(40 102 55)" fill="#C9954A" opacity="0.35"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-badge">BODYNATE KYOTO</div>
+    <div class="hero-women-badge">女性専用サロン</div>
+    <h1>
+      <span class="en">Women's Seitai &amp; Pilates</span>
+      骨格から整える、<br><strong>女性のための整体。</strong>
+    </h1>
+    <p class="hero-sub">
+      理学療法士が診る、女性専用の整体サロン。<br>
+      整体・ピラティスで、身体の歪みを根本から整え<br>本来の美しい姿勢と軽やかな身体へ。
+    </p>
+    <div class="hero-cta-wrap">
+      <a href="#services" class="btn-gold">メニューを見る</a>
+      <a href="#access" class="btn-outline">店舗情報・アクセス</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ── CONCEPT ── -->
+<section class="concept" id="concept">
+
+  <!-- 右端 ボタニカル -->
+  <svg class="concept-botanical" viewBox="0 0 200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100 480 C100 480 100 340 120 220 C140 100 100 20 100 8" stroke="#C9954A" stroke-width="1.2" fill="none"/>
+    <ellipse cx="115" cy="240" rx="50" ry="23" transform="rotate(25 115 240)" fill="#C9954A" opacity="0.7"/>
+    <ellipse cx="108" cy="310" rx="44" ry="20" transform="rotate(-20 108 310)" fill="#C9954A" opacity="0.6"/>
+    <ellipse cx="122" cy="175" rx="40" ry="18" transform="rotate(45 122 175)" fill="#C9954A" opacity="0.55"/>
+    <ellipse cx="105" cy="140" rx="34" ry="15" transform="rotate(-10 105 140)" fill="#C9954A" opacity="0.45"/>
+    <ellipse cx="118" cy="80"  rx="30" ry="13" transform="rotate(55 118 80)"  fill="#C9954A" opacity="0.4"/>
+  </svg>
+
+  <div class="section-inner">
+    <div class="concept-grid">
+
+      <div class="concept-image">
+        <!-- 店舗写真を入れる -->
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="31" stroke="#C9954A" stroke-width="1" opacity="0.35"/>
+          <path d="M32 8 C32 8 20 26 32 38 C44 26 32 8 32 8Z" fill="#C9954A" opacity="0.25"/>
+          <path d="M10 32 C10 32 24 20 38 32 C24 44 10 32 10 32Z" fill="#C9954A" opacity="0.18"/>
+        </svg>
+        <span style="font-size:12px; letter-spacing:0.12em;">店舗写真</span>
+        <div class="concept-image-accent"></div>
+        <div class="concept-image-accent2"></div>
+      </div>
+
+      <div>
+        <div class="concept-eyebrow">OUR CONCEPT</div>
+        <h2 class="concept-title">
+          骨格から整えると、<br>
+          <strong>姿勢も・痛みも・見た目も</strong>変わる
+        </h2>
+        <p class="concept-body">
+          BodyNate 京都店は、女性のための整体専門サロンです。<br><br>
+          国家資格を持つ理学療法士が、骨格・筋肉・姿勢を医療的視点で評価。整体とピラティスを組み合わせることで、一時的なほぐしではなく、身体が「正しい状態」を覚えていけるようサポートします。
+        </p>
+        <ul class="concept-features">
+          <li>理学療法士（国家資格）が担当</li>
+          <li>女性専用・完全予約制・完全個室</li>
+          <li>肩こり・腰痛・姿勢・産後ケアに対応</li>
+          <li>京都・駅近の便利な立地</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PHILOSOPHY ── -->
+<section style="background: var(--dark); padding: 88px 24px; position: relative; overflow: hidden; text-align: center;">
+
+  <!-- ボタニカル装飾 -->
+  <svg style="position:absolute; top:-20px; left:-20px; width:220px; opacity:0.07; pointer-events:none;" viewBox="0 0 340 340" fill="none">
+    <path d="M30 310 C30 310 60 220 130 170 C200 120 250 50 220 20" stroke="#C9954A" stroke-width="1.2" fill="none"/>
+    <ellipse cx="105" cy="190" rx="48" ry="22" transform="rotate(-35 105 190)" fill="#C9954A"/>
+    <ellipse cx="165" cy="130" rx="42" ry="20" transform="rotate(-55 165 130)" fill="#C9954A"/>
+    <ellipse cx="68"  cy="250" rx="52" ry="24" transform="rotate(-18 68 250)"  fill="#C9954A"/>
+  </svg>
+  <svg style="position:absolute; bottom:-20px; right:-20px; width:220px; opacity:0.07; pointer-events:none; transform:rotate(180deg);" viewBox="0 0 340 340" fill="none">
+    <path d="M30 310 C30 310 60 220 130 170 C200 120 250 50 220 20" stroke="#C9954A" stroke-width="1.2" fill="none"/>
+    <ellipse cx="105" cy="190" rx="48" ry="22" transform="rotate(-35 105 190)" fill="#C9954A"/>
+    <ellipse cx="165" cy="130" rx="42" ry="20" transform="rotate(-55 165 130)" fill="#C9954A"/>
+    <ellipse cx="68"  cy="250" rx="52" ry="24" transform="rotate(-18 68 250)"  fill="#C9954A"/>
+  </svg>
+
+  <div style="max-width:780px; margin:0 auto; position:relative; z-index:1;">
+    <div style="font-size:10px; letter-spacing:0.35em; color:var(--gold); margin-bottom:20px; font-family:'Hiragino Kaku Gothic ProN',sans-serif;">OUR PHILOSOPHY</div>
+
+    <!-- 引用符 -->
+    <div style="font-size:80px; color:var(--gold); opacity:0.25; font-family:Georgia,serif; line-height:0.8; margin-bottom:12px;">"</div>
+
+    <p style="font-size:clamp(20px,3.5vw,34px); font-weight:400; color:white; line-height:1.8; letter-spacing:0.06em; margin-bottom:32px;">
+      どんなライフスタイルでも、<br>
+      <span style="color:var(--gold); font-weight:700;">痛みなく輝く女性</span>が<br>
+      増えてほしい。
+    </p>
+
+    <div style="width:40px; height:1px; background:var(--gold); margin:0 auto 32px;"></div>
+
+    <p style="font-size:15px; color:rgba(255,255,255,0.55); line-height:2.2; letter-spacing:0.04em;">
+      仕事も、子育ても、趣味も。忙しく毎日を生きる女性たちが、<br>
+      身体の痛みや不調に縛られることなく、自分らしく輝いていける。<br>
+      そんな社会をつくりたいという想いで、BodyNate 京都店は生まれました。
+    </p>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="services">
+
+  <svg class="services-botanical-l" viewBox="0 0 200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100 400 C100 400 100 280 80 160 C60 40 90 10 100 4" stroke="#C9954A" stroke-width="1.2" fill="none"/>
+    <ellipse cx="85" cy="180" rx="50" ry="22" transform="rotate(-25 85 180)" fill="#C9954A" opacity="0.7"/>
+    <ellipse cx="92" cy="260" rx="44" ry="20" transform="rotate(18 92 260)" fill="#C9954A" opacity="0.55"/>
+    <ellipse cx="80" cy="120" rx="38" ry="17" transform="rotate(-42 80 120)" fill="#C9954A" opacity="0.5"/>
+    <ellipse cx="88" cy="75"  rx="30" ry="13" transform="rotate(-60 88 75)"  fill="#C9954A" opacity="0.4"/>
+  </svg>
+
+  <div class="section-inner">
+    <div class="section-eyebrow">MENU &amp; RESERVATION</div>
+    <h2 class="section-title">女性専用メニュー・<strong>ご予約</strong></h2>
+    <div class="gold-divider"><div class="gold-divider-dot"></div></div>
+
+    <div class="services-grid">
+
+      <!-- 整体 × ピラティス -->
+      <div class="service-card">
+        <div class="service-thumb service-thumb-pilates">
+          🌿
+          <span class="service-label">SEITAI × PILATES</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">整体 × ピラティスセット</div>
+          <p class="service-desc">
+            整体で歪みを整え、ピラティスで正しい身体の使い方を習得。姿勢・ボディラインを根本から改善します。
+          </p>
+          <div class="service-booking-row">
+            <div class="booking-icon icon-st">ST</div>
+            STORESの予約アプリで予約
+          </div>
+          <a href="#" class="btn-reserve btn-reserve-gold">STORESで予約する →</a>
+          <a href="pilates.html" class="service-detail-link">詳しく見る</a>
+        </div>
+      </div>
+
+      <!-- 整体 -->
+      <div class="service-card">
+        <div class="service-thumb service-thumb-seitai">
+          🌾
+          <span class="service-label">SEITAI</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">整体</div>
+          <p class="service-desc">
+            理学療法士による骨格・筋肉へのアプローチ。肩こり・腰痛・姿勢の歪みなど、身体の不調を根本から整えます。
+          </p>
+          <div class="service-booking-row">
+            <div class="booking-icon icon-line">L</div>
+            公式LINEにて予約受付
+          </div>
+          <a href="https://line.me/R/ti/p/@bodynate" class="btn-reserve btn-reserve-gold">LINEで予約する →</a>
+          <a href="seitai.html" class="service-detail-link">詳しく見る</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── STAFF ── -->
+<section class="staff" id="staff">
+
+  <svg class="staff-botanical" viewBox="0 0 180 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M90 380 C90 380 90 260 110 150 C130 40 90 10 90 4" stroke="#C9954A" stroke-width="1" fill="none"/>
+    <ellipse cx="104" cy="168" rx="44" ry="20" transform="rotate(22 104 168)" fill="#C9954A" opacity="0.65"/>
+    <ellipse cx="97"  cy="240" rx="38" ry="17" transform="rotate(-18 97 240)"  fill="#C9954A" opacity="0.5"/>
+    <ellipse cx="110" cy="110" rx="34" ry="15" transform="rotate(44 110 110)" fill="#C9954A" opacity="0.45"/>
+    <ellipse cx="96"  cy="72"  rx="28" ry="12" transform="rotate(-8  96 72)"   fill="#C9954A" opacity="0.35"/>
+  </svg>
+
+  <div class="section-inner">
+    <div class="section-eyebrow">STAFF</div>
+    <h2 class="section-title">担当<strong>スタッフ</strong></h2>
+    <div class="gold-divider"><div class="gold-divider-dot"></div></div>
+
+    <div class="staff-card">
+      <div class="staff-photo">
+        <!-- スタッフ写真 -->
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <circle cx="26" cy="18" r="12" fill="white" opacity="0.35"/>
+          <path d="M4 50 C4 36 48 36 48 50" fill="white" opacity="0.35"/>
+        </svg>
+        <span style="font-size:12px; letter-spacing:0.12em; color:rgba(255,255,255,0.7);">スタッフ写真</span>
+        <div class="staff-photo-circle"></div>
+        <div class="staff-photo-circle2"></div>
+      </div>
+      <div class="staff-info">
+        <div class="staff-role">理学療法士 / 院長</div>
+        <div class="staff-name-text">（スタッフ名）</div>
+        <div class="staff-name-en">（ローマ字）</div>
+        <div class="staff-tags">
+          <span class="staff-tag">理学療法士（国家資格）</span>
+          <span class="staff-tag">整体</span>
+          <span class="staff-tag">ピラティス指導</span>
+          <span class="staff-tag">エステ監修</span>
+        </div>
+        <p class="staff-bio">
+          ここにスタッフのプロフィールが入ります。資格・経歴・得意分野など、お客様が安心してご来店いただけるような情報をご記載ください。<br><br>
+          「身体と向き合う時間が、あなたの日常を変えていきます。」
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VOICE ── -->
+<section class="voice">
+
+  <svg class="voice-botanical" viewBox="0 0 160 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M80 340 C80 340 80 220 60 120 C40 20 70 5 80 2" stroke="#C9954A" stroke-width="1" fill="none"/>
+    <ellipse cx="66" cy="138" rx="40" ry="18" transform="rotate(-28 66 138)" fill="#C9954A" opacity="0.65"/>
+    <ellipse cx="74" cy="210" rx="36" ry="16" transform="rotate(14 74 210)" fill="#C9954A" opacity="0.5"/>
+    <ellipse cx="62" cy="88"  rx="30" ry="13" transform="rotate(-48 62 88)"  fill="#C9954A" opacity="0.45"/>
+  </svg>
+
+  <div class="section-inner">
+    <div class="section-eyebrow">CUSTOMER VOICE</div>
+    <h2 class="section-title">お客様の<strong>声</strong></h2>
+    <div class="gold-divider"><div class="gold-divider-dot"></div></div>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-quote">"</div>
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">産後から続いていた腰痛が、数回の施術でずいぶん楽になりました。女性専用なので安心して通えます。</p>
+        <div class="voice-person">30代 女性 / 整体（産後ケア）</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-quote">"</div>
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">デスクワークで慢性的だった肩こりが改善され、姿勢も変わったと周りから言われるようになりました。</p>
+        <div class="voice-person">30代 女性 / 整体×ピラティス</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-quote">"</div>
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">ピラティスで体の使い方が変わりました。痛みがなくなるだけでなく、歩き方まで軽くなった気がします。</p>
+        <div class="voice-person">40代 女性 / 整体×ピラティス</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INSTAGRAM ── -->
+<section class="instagram">
+  <div class="section-inner">
+    <div class="section-eyebrow">INSTAGRAM</div>
+    <h2 class="section-title"><strong>@bodynate_kyoto</strong></h2>
+    <div class="gold-divider"><div class="gold-divider-dot"></div></div>
+    <div class="instagram-placeholder">
+      <p>Instagramの投稿がここに表示されます</p>
+      <a href="#" class="instagram-handle">@bodynate_kyoto をフォローする →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ACCESS ── -->
+<section class="access" id="access">
+  <div class="section-inner">
+    <div class="section-eyebrow">ACCESS</div>
+    <h2 class="section-title">店舗情報・<strong>アクセス</strong></h2>
+    <div class="gold-divider"><div class="gold-divider-dot"></div></div>
+
+    <div class="access-grid">
+
+      <div class="access-map">
+        <!-- Google マップ iframe をここに差し替え -->
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <path d="M20 3C13 3 8 8.5 8 15C8 24.5 20 37 20 37C20 37 32 24.5 32 15C32 8.5 27 3 20 3Z" stroke="#C9954A" stroke-width="1.2" fill="none"/>
+          <circle cx="20" cy="15" r="4" stroke="#C9954A" stroke-width="1.2" fill="none"/>
+        </svg>
+        <span>地図を表示（Google Maps）</span>
+      </div>
+
+      <div>
+        <div class="access-name">BodyNate 京都店</div>
+        <ul class="access-list">
+          <li>
+            <span class="al">住所</span>
+            <span class="av">〒xxx-xxxx<br>京都府京都市〇〇区〇〇町 xx-x</span>
+          </li>
+          <li>
+            <span class="al">電話</span>
+            <span class="av">xxx-xxxx-xxxx</span>
+          </li>
+          <li>
+            <span class="al">最寄駅</span>
+            <span class="av">〇〇線「〇〇駅」 徒歩xx分</span>
+          </li>
+          <li>
+            <span class="al">駐車場</span>
+            <span class="av">あり / なし（詳細を記載）</span>
+          </li>
+        </ul>
+        <div class="access-hours">
+          <div class="access-hours-title">OPEN HOURS</div>
+          <div class="access-hours-body">
+            月〜土　10:00 〜 20:00<br>
+            日・祝　10:00 〜 18:00<br>
+            定休日：（定休日を記載）
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Body<span>Nate</span></div>
+  <div class="footer-sub">KYOTO</div>
+  <ul class="footer-links">
+    <li><a href="#concept">コンセプト</a></li>
+    <li><a href="#services">メニュー</a></li>
+    <li><a href="#staff">スタッフ</a></li>
+    <li><a href="#access">アクセス</a></li>
+    <li><a href="#">プライバシーポリシー</a></li>
+    <li><a href="#">特定商取引法に基づく表記</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 BodyNate 京都店. All Rights Reserved.</p>
+</footer>
+
+<!-- ── フローティングバー（スマホ） ── -->
+<div class="floating-bar" id="floatingBar">
+  <a href="#" class="fb-btn fb-st">整体×ピラティス<br><span style="font-size:9px;font-weight:400;">STORESで予約</span></a>
+  <a href="https://line.me/R/ti/p/@bodynate" class="fb-btn fb-line">整体予約<br><span style="font-size:9px;font-weight:400;">公式LINEで予約</span></a>
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('floatingBar')
+      .classList.toggle('visible', window.scrollY > 450);
+  });
+</script>
+
+</body>
+</html>

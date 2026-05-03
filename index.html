@@ -375,10 +375,25 @@
       justify-content: center;
       position: relative;
       font-size: 52px;
+      overflow: hidden;
     }
-    .service-thumb-esthe   { background: linear-gradient(145deg, #FAF0F1 0%, #EDD4D7 100%); }
-    .service-thumb-seitai  { background: linear-gradient(145deg, #F4F4F4 0%, #E8E8E8 100%); }
-    .service-thumb-pilates { background: linear-gradient(145deg, #F8F4F0 0%, #EDE0D5 100%); }
+    .service-thumb-esthe {
+      padding: 0;
+    }
+    .esthe-split-l, .esthe-split-r {
+      flex: 1;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .esthe-split-l { background-image: url('images/esute.jpg'); }
+    .esthe-split-r { background-image: url('images/reikyaku.jpg'); border-left: 2px solid white; }
+    .service-thumb-seitai {
+      background: url('images/seitai.png') center center / cover no-repeat;
+    }
+    .service-thumb-pilates {
+      background: url('images/pilates2.png') center center / cover no-repeat;
+    }
 
     .service-label {
       position: absolute;
@@ -766,7 +781,8 @@
       <!-- エステ -->
       <div class="service-card">
         <div class="service-thumb service-thumb-esthe">
-          🌸
+          <div class="esthe-split-l"></div>
+          <div class="esthe-split-r"></div>
           <span class="service-label">ESTHE</span>
         </div>
         <div class="service-body">
@@ -783,7 +799,6 @@
       <!-- 整体 -->
       <div class="service-card">
         <div class="service-thumb service-thumb-seitai">
-          🌾
           <span class="service-label">SEITAI</span>
         </div>
         <div class="service-body">
@@ -800,7 +815,6 @@
       <!-- ピラティス -->
       <div class="service-card">
         <div class="service-thumb service-thumb-pilates">
-          🌿
           <span class="service-label">PILATES TRAINING</span>
         </div>
         <div class="service-body">
@@ -915,7 +929,7 @@
           <div class="access-hours-title">OPEN HOURS</div>
           <div class="access-hours-body">
             月・水〜金　9:00 〜 21:00<br>
-            土　　　　　9:00 〜 21:00<br>
+            土　　　　　9:00 〜 20:00<br>
             日　　　　　9:00 〜 19:00<br>
             定休日：火曜日
           </div>
